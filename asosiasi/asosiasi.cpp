@@ -4,6 +4,7 @@ using namespace std;
 
 class dokter;
 class pasien {
+public:
 	string nama;
 	vector<dokter*> daftar_dokter;
 	pasien(string pNama) :nama(pNama) {
@@ -44,4 +45,11 @@ void pasien::cetakDokter() {
 void dokter::tambahPasien(pasien* pPasien) {
 	daftar_pasien.push_back(pPasien);
 	pPasien->tambahDokter(this);
+}
+void dokter::cetakPasien() {
+	cout << "daftar pasien dari dokter \"" << this->nama << "\":";
+	for (auto& a : daftar_pasien) {
+		cout << a->nama << "\n";
+	}
+	cout << endl;
 }
