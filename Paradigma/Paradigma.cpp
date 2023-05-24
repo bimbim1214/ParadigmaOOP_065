@@ -19,3 +19,4 @@ public:
     }
 };
 
+class pelajar : public orang {
